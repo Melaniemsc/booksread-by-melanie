@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+        <h1>Lets Edit this Book</h1>
+        <form action="/booksRead/<%=book._id%>?_method=PUT" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" name="name" value="<%= book.name %>"><br>
+
+            <label for="serie">Serie:</label>
+            <input type="text" name="serie" value="<%= book.serie %>"><br>
+
+            <label for="number">Number:</label>
+            <input type="number" name="number" value="<%= book.number %>"><br>
+
+            <label for="year">Year:</label>
+            <input type="number" name="year" value="<%= book.year %>"><br>
+
+            <label for="author">Author:</label>
+            <input type="text" name="author" value="<%= book.author %>"><br>
+
+            <label for="genre">Genre:</label>
+            <input type="text" name="genre" value="<%= book.genre %>"><br>
+
+            <button type="submit">Update Book</button>
+        </form>
+
+</body>
+
+</html>
