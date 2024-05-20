@@ -9,6 +9,8 @@
 <body>
     <%- include('./partials/nav') %>
     <h1>Lets Add a New Book </h1>
+    <div id="general-div">
+    <p>You have a new book you want to add? </p>
     <form action="/booksRead" method="POST">
         <label for="name">Name:</label>
         <input type="text" name="name" id="name"><br>
@@ -23,7 +25,8 @@
         <label for="genre">Genre:</label>
         <input type="text" name="genre" id="genre"><br>
 
-        <button type="submit">Add movie</button>
+        <button type="submit">Add Book</button>
     </form>
+</div>
 </body>
 </html>

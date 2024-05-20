@@ -11,6 +11,7 @@
 <body>
     <%- include('./partials/nav') %>
         <h1>Lets Edit this Book</h1>
+        <div id="general-div">
         <form action="/booksRead/<%=book._id%>?_method=PUT" method="POST">
             <label for="name">Name:</label>
             <input type="text" name="name" value="<%= book.name %>"><br>

@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Search Results</title>
     <link rel="stylesheet" href="/stylesheets/main.css" />
 </head>
 <body>
     <%- include('./partials/nav') %>
-    <h1>All the Books</h1>
+    <h1>Search Results</h1>
     <div id="general-div">
-    <p>Here is a list of some books I have read, click on any of them to see the details</p>
+    <p>Here is a list of the books that match, I hope you find what you are looking for</p>
     <ul>
-        <% books.forEach(book => { %>
+        <% booksResult.forEach(book => { %>
             <li>
                 <a href="/booksRead/<%= book._id %>"><%= book.name %></a>
             </li>   

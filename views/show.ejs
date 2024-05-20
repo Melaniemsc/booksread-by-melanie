@@ -12,28 +12,34 @@
     <%- include('./partials/nav') %>
 
         <h1>Book Details</h1>
-        <p>Some details about this book</p>
+        <div id="general-div">
+            <p>Some details about this book.</p>
 
-        <p>Name: <%= book.name %>
-        </p>
-        <% if (book.serie) { %>
-            <p>Serie: <%= book.serie %>
+            <p>Name: <%= book.name %>
             </p>
-            <% } %>
-                <% if (book.number) { %>
-                    <p>Number: <%= book.number %>
-                    </p>
-                    <% } %>
-                        <p>Year: <%= book.year %>
+            <% if (book.serie) { %>
+                <p>Serie: <%= book.serie %>
+                </p>
+                <% } %>
+                    <% if (book.number) { %>
+                        <p>Number: <%= book.number %>
                         </p>
-                        <p>Author: <%= book.author %>
-                        </p>
-                        <p>Genre: <%= book.genre %>
-                        </p>
-                        <form action="/booksRead/<%= book._id %>?_method=DELETE" method="POST">
-                            <button type="submit">🗑️</button>
-                        </form>
-                        <a href="/booksRead/<%= book._id %>/edit">Edit book</a>
+                        <% } %>
+                            <p>Year: <%= book.year %>
+                            </p>
+                            <p>Author: <%= book.author %>
+                            </p>
+                            <p>Genre: <%= book.genre %>
+                            </p>
+                            <div id="show-div">
+                                <form action="/booksRead/<%= book._id %>?_method=DELETE" method="POST">
+                                    <button type="submit">🗑️</button>
+                                </form>
+                                <form action="/booksRead/<%= book._id %>/edit">
+                                <button>Edit Book</button>
+                            </form>
+                            </div>
+        </div>
 </body>
 
 </html>
