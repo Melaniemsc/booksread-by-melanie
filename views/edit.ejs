@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lets Edit this Book</title>
     <link rel="stylesheet" href="/stylesheets/main.css" />
 </head>
 
@@ -12,6 +12,7 @@
     <%- include('./partials/nav') %>
         <h1>Lets Edit this Book</h1>
         <div id="general-div">
+            <% if (user) { %>
         <form action="/booksRead/<%=book._id%>?_method=PUT" method="POST">
             <label for="name">Name:</label>
             <input type="text" name="name" value="<%= book.name %>"><br>
@@ -33,6 +34,9 @@
 
             <button type="submit">Update Book</button>
         </form>
+        <% } else{%>
+            <%- include('./partials/user-needed') %>
+            <% } %>
 
 </body>
 

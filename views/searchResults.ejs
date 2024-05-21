@@ -10,6 +10,7 @@
     <%- include('./partials/nav') %>
     <h1>Search Results</h1>
     <div id="general-div">
+        <% if (user) { %>
     <p>Here is a list of the books that match, I hope you find what you are looking for</p>
     <ul>
         <% booksResult.forEach(book => { %>
@@ -18,6 +19,9 @@
             </li>   
         <% }) %>
     </ul>
+    <% } else{%>
+        <%- include('./partials/user-needed') %>
+        <% } %>
 </div>
 </body>
 </html>

@@ -3,17 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" href="/stylesheets/main.css" />
 </head>
 <body>
     <%- include('./partials/nav') %>
+    <% if (user) { %>
+        <h1> Hello <%= user.username %> 📚</h1>
+    <% } else{ %>
     <h1> Hello Books 📚</h1>
+    <% } %>
     <div id="general-div">
     <p>This is a page dedicated to some of the books I have read throughout my life.</p>
     <p>I hope that with time I will be able to add them all, but we will see.  </p>
-    <p>Click here to see all the <a href="booksRead">books</a></p>
-    <p>Click here to add a <a href="/new-book">new book</a></p>
+    <% if (user) { %>
+        <p>Click here to see all the <a href="booksRead">books</a></p>
+        <p>Click here to add a <a href="/new-book">new book</a></p>
+        <p>You already tired? <a href="/auth/sign-out"> Sign out</a></p>
+    <% } else { %>
+        <p>You need an acount to see the books</p>
+
+            <p><a href="/auth/sign-up">Click Here</a> to create a new acount</p>
+            <p><a href="/auth/sign-in">Click Here</a> if you already have an acount</p>
+     <% } %>
     </div>
 </body>
 </html>

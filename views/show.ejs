@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Book Details</title>
     <link rel="stylesheet" href="/stylesheets/main.css" />
 </head>
 
@@ -13,6 +13,9 @@
 
         <h1>Book Details</h1>
         <div id="general-div">
+            <% if (user) { %>
+             
+            
             <p>Some details about this book.</p>
 
             <p>Name: <%= book.name %>
@@ -39,6 +42,9 @@
                                 <button>Edit Book</button>
                             </form>
                             </div>
+                            <% } else{%>
+                                <%- include('./partials/user-needed') %>
+                                <% } %>
         </div>
 </body>
 

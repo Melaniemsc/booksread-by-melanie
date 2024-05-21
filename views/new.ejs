@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>New Book</title>
     <link rel="stylesheet" href="/stylesheets/main.css" />
 </head>
 <body>
     <%- include('./partials/nav') %>
     <h1>Lets Add a New Book </h1>
     <div id="general-div">
+        <% if (user) { %>
     <p>You have a new book you want to add? </p>
     <form action="/booksRead" method="POST">
         <label for="name">Name:</label>
@@ -27,6 +28,9 @@
 
         <button type="submit">Add Book</button>
     </form>
+    <% } else{%>
+        <%- include('./partials/user-needed') %>
+        <% } %>
 </div>
 </body>
 </html>

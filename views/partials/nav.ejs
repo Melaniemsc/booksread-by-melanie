@@ -1,6 +1,13 @@
 <nav>
-    <li id="nav-list"><a href="/">Home</a></li>
-    <li id="nav-list"><a href="/booksRead">Books</a></li>
-    <li id="nav-list"><a href="/new-book">New Book</a></li>
-    <li id="nav-list"><a href="/search">Search</a></li>
+    <% if (user) { %>
+        <li id="nav-list"><a href="/">Home</a></li>
+        <li id="nav-list"><a href="/booksRead">Books</a></li>
+        <li id="nav-list"><a href="/new-book">New Book</a></li>
+        <li id="nav-list"><a href="/search">Search</a></li>
+        <li id="nav-list"><a href="/auth/sign-out">Sign Out</a></li>
+
+    <% } else { %>
+    <li id="nav-list"><a href="/auth/sign-up">Sign Up</a></li>
+    <li id="nav-list"><a href="/auth/sign-in">Sign In</a></li>
+    <% } %>
 </nav>
